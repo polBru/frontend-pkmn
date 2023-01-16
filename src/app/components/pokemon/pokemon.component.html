@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    <div *ngIf="pokemon" class="row animate_animated animate_bounce animate_fadeIn">
+        <div class="col-md-9">
+            <p class="text-capitalize"><strong>{{pokemon.name}}</strong> #{{pokemon.id}}</p>
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.id}}.png">
+            
+        </div>
+        <div class="col-md-3">
+            <a class="btn btn-danger" routerLink="/">Back</a>
+        </div>
+        <div *ngIf="!details" class="col-md-9">
+            <button type="button" class="btn btn-primary" (click)="changeDetails()">Show details</button>
+        </div>
+        <div *ngIf="details" class="col-md-9">
+            <div >
+
+            </div>
+            <mat-tab-group class="mb-3" animationDuration="0ms">
+                <mat-tab label="Weight">{{pokemon.weight}} hg</mat-tab>
+                <mat-tab label="Height">{{pokemon.height}} dm</mat-tab>
+              </mat-tab-group>
+            <p><strong>Defeated experience:</strong> {{pokemon.base_experience}} experience</p>
+            <button type="button" class="btn btn-primary" (click)="changeDetails()">Hide details</button>
+        </div>
+    </div>
+</div>

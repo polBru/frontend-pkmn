@@ -1,0 +1,8 @@
+<div class="container">
+    <h1>Pokemons</h1>
+    <ul class="list-group">
+        <a *ngFor="let poke of pokemons" [routerLink]="['/pokemon', poke.id ]" class="list-group-item list-group-item-action animate_animated animate_bounce animate_fadeIn">
+            {{poke.id}} - {{poke.name}}
+        </a>
+    </ul>
+</div>
